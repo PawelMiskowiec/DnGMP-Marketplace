@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DnGMP</title>
+</head>
+<body>
+<div id="logo" class="container" th:fragment="logo"> <a href="/main"><img src="logo.png"></a></div>
+<nav class="nav-bar-cell1-rev" th:fragment="menu">
+    <div id="menu" class="container">
+        <div class="row">
+            <div class="column">
+                <a href="/main" class="button button-outline float-left">Strona główna</a>
+                <a th:if="${logged == true}" href="/myAuctions" class="button button-outline float-left">Moje ogłoszenia</a>
+                <a th:if="${logged == true}" href="/auctions/add" class="button button-outline float-left">Dodaj ogłoszenie</a>
+                <a th:if="${logged == false}" href="/login" class="button float-right">Zaloguj się</a>
+                <a th:if="${logged == false}" href="/reg" class="button button-outline float-right">Zarejestruj się</a>
+                <a th:if="${logged == true}" href="/logout" class="button button-outline float-right">Wyloguj się</a>
+            </div>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

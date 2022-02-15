@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DnGMP</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+
+</head>
+<body>
+<div class="contener">
+    <div th:replace="fragments.html :: logo"></div>
+    <div th:replace="fragments.html :: menu"></div>
+    <br>
+    <div class="container">
+        <select th:field="*{cat}" class="select-label" name="category" th:onchange="'window.location.href = \'' + @{/main} + '?category=\' + this.value ' ">
+            <option value=""></option>
+            <option th:each="category : ${cat}" th:value="${category}" th:text="${category}">
+            </option>
+        </select>
+    </div>
+    <br>
+    <div id="content" class="container">
+        <table>
+            <tbody>
+            <div th:each="auction : ${auctions}" class="container">
+                <tr>
+                    <td>
+                        <div th:text="${auction.title}" class="title"></div>
+                        <div th:text="${auction.category}" class="category"></div>
+                        <div th:text="${auction.getUser.phoneNumber}" class="phoneNumber"></div>
+                        <div th:text="'Cena: ' + ${auction.price}" class="price"></div>
+                        <a th:if="${logged == true}" th:href="@{/auctions/{id}(id=${auction.id})}" class="button">Szczegóły</a>
+
+                    </td>
+                </tr>
+            </div>
+            </tbody>
+        </table>
+    </div>
+
+<!--    <footer class="contact">-->
+<!--        <div class="container">-->
+<!--            <a href="/contact" class="button button-outline">Kontakt</a>-->
+<!--        </div>-->
+<!--    </footer>-->
+</div>
+</body>
+</html>

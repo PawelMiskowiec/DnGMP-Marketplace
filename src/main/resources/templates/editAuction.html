@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <title>DnGMP</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+
+<div class="container">
+    <form method="post">
+        <input type="text" placeholder="Tytul" name="title" th:attr="value=${auction.title}">
+        <input type="text" placeholder="Kategoria" name="category" th:attr="value=${auction.category}">
+        <input type="text" placeholder="Opis" name="description" th:attr="value=${auction.description}">
+        <input type="number" placeholder="Cena" name="price" th:attr="value=${auction.price}">
+        <br>
+        <input type="submit" value="Edytuj">
+    </form>
+</div>
+
+</body>
+</html>
