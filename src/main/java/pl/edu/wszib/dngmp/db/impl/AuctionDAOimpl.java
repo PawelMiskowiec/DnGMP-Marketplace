@@ -26,7 +26,7 @@ public class AuctionDAOimpl implements IAuctionDAO {
     @Override
     public Set<Auction> getAll() {
         Session session = this.sessionFactory.openSession();
-        Query<Auction> query = session.createQuery("FROM Auction ORDER BY createdAt DESC");
+        Query<Auction> query = session.createQuery("FROM Auction");
         try {
             Set<Auction> auctions= query.getResultStream().collect(Collectors.toSet());
             session.close();

@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title><!DOCTYPE html>
-        <html lang="en">
-        <head>
-        <meta charset="UTF-8">
-        <title>DnGMP</title>
+    <title>DnGMP</title>
     <link rel="stylesheet" href="main.css">
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
@@ -22,10 +18,18 @@
 
 <div class="container">
     <form method="post">
-        <input type="text" placeholder="Tytul" name="title" th:attr="value=${auction.title}">
-        <input type="text" placeholder="Kategoria" name="category" th:attr="value=${auction.category}">
-        <input type="text" placeholder="Opis" name="description" th:attr="value=${auction.description}">
-        <input type="number" placeholder="Cena" name="price" th:attr="value=${auction.price}">
+        <label for="title">Tytuł</label>
+        <input type="text" placeholder="Tytul" name="title" id="title" th:attr="value=${auction.title}">
+
+        <label for="cat">Kategoria</label>
+        <input type="text" placeholder="Kategoria" name="category" id="cat" th:attr="value=${auction.category}">
+
+        <label for="des">Opis</label>
+        <input type="text" placeholder="Opis" name="description" id="des" th:attr="value=${auction.description}">
+
+        <label for="price">Cena</label>
+        <input type="number" placeholder="Cena" name="price" id="price" th:attr="value=${auction.price}">
+
         <br>
         <input type="submit" value="Edytuj">
     </form>

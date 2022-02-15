@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>DnGMP</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+
 </head>
 <body>
+<div class="contener">
+    <div th:replace="fragments.html :: logo"></div>
+    <div th:replace="fragments.html :: menu"></div>
 
+    <br><br><br>
+    <div id="content" class="container">
+        <table>
+            <tbody>
+            <div th:each="message: ${messages}" class="order">
+                <tr>
+                    <td>Autor wiadomośći:
+                        <div th:text="${message.user.login}" class="title"></div>
+                        Ogloszenie:
+                        <div th:text="${message.auction.title}" class="title"></div>
+                    </td>
+                    <td>
+                        <div th:text="${message.message}" class="title"></div>
+                    </td>
+                </tr>
+            </div>
+            </tbody>
+        </table>
+        <br>
+    </div>
+</div>
+
+</div>
 </body>
 </html>

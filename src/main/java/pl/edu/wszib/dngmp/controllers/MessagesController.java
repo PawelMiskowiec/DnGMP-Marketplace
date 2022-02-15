@@ -12,7 +12,7 @@ import pl.edu.wszib.dngmp.session.SessionObject;
 import javax.annotation.Resource;
 
 @Controller
-@RequestMapping("/msng")
+@RequestMapping("/")
 @AllArgsConstructor
 public class MessagesController {
     private final IMessageService messageService;
@@ -22,11 +22,11 @@ public class MessagesController {
     @Resource
     SessionObject sessionObject;
 
-    @GetMapping
+    @GetMapping("/myMessages")
     public String getAllUsersMessages(Model model){
         model.addAttribute("messages", messageService.getUserMessages());
         model.addAttribute("logged", sessionObject.isLogged());
-        return "msng";
+        return "myMessages";
     }
 
 

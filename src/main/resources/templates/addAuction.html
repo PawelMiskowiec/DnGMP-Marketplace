@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title><!DOCTYPE html>
-        <html lang="en">
-        <head>
-        <meta charset="UTF-8">
-        <title>DnGMP</title>
+    <title>DnGMP</title>
     <link rel="stylesheet" href="main.css">
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
@@ -17,7 +13,7 @@
 
 </head>
 <body>
-<div id="logo" class="container"> <a href="/main"><img src="logo.png"></a></div>
+<div th:replace="fragments.html :: logo"></div>
 
 <div id="menu" class="container">
     <div class="row">
@@ -30,10 +26,18 @@
 
 <div class="container">
     <form method="post">
-        <input type="text" placeholder="Tytul" name="title">
-        <input type="text" placeholder="Kategoria" name="category">
-        <input type="text" placeholder="Opis" name="description">
-        <input type="number" placeholder="Cena" name="price">
+        <label for="title">Tytuł</label>
+        <input type="text" placeholder="Tytul" name="title" id="title">
+
+        <label for="cat">Kategoria</label>
+        <input type="text" placeholder="Kategoria" name="category" id="cat">
+
+        <label for="des">Opis</label>
+        <input type="text" placeholder="Opis" name="description" id="des">
+
+        <label for="price">Cena</label>
+        <input type="number" placeholder="Cena" name="price" id="price">
+
         <br>
         <input type="submit" value="Dodaj Ogloszenie">
     </form>
