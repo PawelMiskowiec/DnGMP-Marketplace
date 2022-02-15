@@ -1,8 +1,8 @@
-#DnGMP MarketPlace app
+# DnGMP MarketPlace app
 
 Simple marketplace app made as final project for Java web application programming classes.
 
-#Configuration
+# Configuration
 
 1. Clone project
 
