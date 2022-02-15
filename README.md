@@ -11,7 +11,7 @@ Simple marketplace app made as final project for Java web application programmin
 - Import mysql database from file dngmp.sql
 - Alternatively create new database named dngmp
 (check hibernate.cfg.xml in resources and AppConfiguration 
-class) to initialize some example data send
+class). To initialize some example data send
 GET request at localhost:8080/admin/initalization
 
 4. Run app
